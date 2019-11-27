@@ -1,0 +1,19 @@
+package test;
+import com.options.clearing.corporation.namescoreapplication.interfaces.ComplexScoringInterface;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ComplexScoringAlgorithm {
+
+    public Map<String, Long> getScoreMap(String [] sortedNames) {
+        System.out.println("COMPLEX ALGORITHM CALLED");
+
+        Map<String, Long> result = new HashMap<>(sortedNames.length, 1);
+
+        for(int i = 0; i < sortedNames.length; i ++) {
+            result.put(sortedNames[i], (i + 1) * 4L );
+        }
+
+        return result;
+    }
