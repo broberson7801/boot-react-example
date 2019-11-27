@@ -1,10 +1,12 @@
 package com.options.clearing.corporation.namescoreapplication.web.model;
 
 import com.options.clearing.corporation.namescoreapplication.web.interfaces.ScoreModelInterface;
+import lombok.Getter;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+@Getter
 public class ErrorModel implements ScoreModelInterface {
 
     private String errorMessage;

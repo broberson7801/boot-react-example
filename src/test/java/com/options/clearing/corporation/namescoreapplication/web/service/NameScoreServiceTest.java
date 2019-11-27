@@ -11,12 +11,13 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.powermock.reflect.Whitebox;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -57,5 +58,33 @@ class NameScoreServiceTest {
         ScoreModelInterface scoreResponseModel = nameScoreService.getScoreFromTextFile("file/path");
 
         assertEquals(ErrorModel.class, scoreResponseModel.getClass());
+    }
+
+    @Test
+    @DisplayName("should create error model")
+    void testGetErrorModelForGettingErrorModel() throws Exception {
+        ErrorModel errorModel = Whitebox.invokeMethod(
+                nameScoreService,
+                "getErrorModel",
+                new IOException("error"),
+                "bad/file/path/"
+                );
+
+        assertNotNull(errorModel.getErrorMessage());
+    }
+
+    @Test
+    @DisplayName("should create a score response model")
+    void testGetScoreResponseModelForGettingScoreResponse() throws Exception {
+        when(scoringHandler.getScoreOfEntireList(any())).thenReturn(1L);
+
+        ScoreResponseModel scoreResponseModel = Whitebox.invokeMethod(
+                nameScoreService,
+                "getScoreResponseModel",
+                new HashMap<>(),
+                new String [0]
+        );
+
+        assertNotNull(scoreResponseModel);
     }
 }
