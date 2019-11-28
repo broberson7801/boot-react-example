@@ -1,4 +1,4 @@
-package com.options.clearing.corporation.namescoreapplication.config;
+package com.options.clearing.corporation.namescoreapplication.shared.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

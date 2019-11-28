@@ -1,4 +1,4 @@
-package com.options.clearing.corporation.namescoreapplication.handler;
+package com.options.clearing.corporation.namescoreapplication.shared.handler;
 
 import com.options.clearing.corporation.namescoreapplication.command.line.CommandLineHandler;
 import org.junit.jupiter.api.DisplayName;

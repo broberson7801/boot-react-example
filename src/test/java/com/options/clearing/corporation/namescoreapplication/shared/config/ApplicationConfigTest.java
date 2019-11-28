@@ -1,16 +1,12 @@
-package com.options.clearing.corporation.namescoreapplication.config;
+package com.options.clearing.corporation.namescoreapplication.shared.config;
 
 import com.options.clearing.corporation.namescoreapplication.command.line.CommandLineHandler;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Configuration;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertAll;

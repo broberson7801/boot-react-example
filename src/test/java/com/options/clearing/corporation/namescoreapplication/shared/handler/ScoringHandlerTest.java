@@ -1,7 +1,7 @@
-package com.options.clearing.corporation.namescoreapplication.handler;
+package com.options.clearing.corporation.namescoreapplication.shared.handler;
 
 import com.options.clearing.corporation.namescoreapplication.command.line.CommandLineHandler;
-import com.options.clearing.corporation.namescoreapplication.util.GeneralUtil;
+import com.options.clearing.corporation.namescoreapplication.shared.util.GeneralUtil;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

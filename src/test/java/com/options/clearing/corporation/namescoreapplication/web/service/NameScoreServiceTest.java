@@ -1,7 +1,7 @@
 package com.options.clearing.corporation.namescoreapplication.web.service;
 
-import com.options.clearing.corporation.namescoreapplication.handler.FileReaderHandler;
-import com.options.clearing.corporation.namescoreapplication.handler.ScoringHandler;
+import com.options.clearing.corporation.namescoreapplication.shared.handler.FileReaderHandler;
+import com.options.clearing.corporation.namescoreapplication.shared.handler.ScoringHandler;
 import com.options.clearing.corporation.namescoreapplication.web.interfaces.ScoreModelInterface;
 import com.options.clearing.corporation.namescoreapplication.web.model.ErrorModel;
 import com.options.clearing.corporation.namescoreapplication.web.model.ScoreResponseModel;

@@ -1,7 +1,7 @@
-package com.options.clearing.corporation.namescoreapplication.handler;
+package com.options.clearing.corporation.namescoreapplication.shared.handler;
 
-import com.options.clearing.corporation.namescoreapplication.util.Constants;
-import com.options.clearing.corporation.namescoreapplication.util.GeneralUtil;
+import com.options.clearing.corporation.namescoreapplication.shared.util.Constants;
+import com.options.clearing.corporation.namescoreapplication.shared.util.GeneralUtil;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;

@@ -1,6 +1,6 @@
-package com.options.clearing.corporation.namescoreapplication.handler;
+package com.options.clearing.corporation.namescoreapplication.shared.handler;
 
-import com.options.clearing.corporation.namescoreapplication.config.ApplicationConfig;
+import com.options.clearing.corporation.namescoreapplication.shared.config.ApplicationConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

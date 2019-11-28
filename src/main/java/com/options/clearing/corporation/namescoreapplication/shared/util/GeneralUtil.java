@@ -1,4 +1,4 @@
-package com.options.clearing.corporation.namescoreapplication.util;
+package com.options.clearing.corporation.namescoreapplication.shared.util;
 
 import java.util.Arrays;
 

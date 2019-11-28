@@ -1,4 +1,4 @@
-package com.options.clearing.corporation.namescoreapplication.util;
+package com.options.clearing.corporation.namescoreapplication.shared.util;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

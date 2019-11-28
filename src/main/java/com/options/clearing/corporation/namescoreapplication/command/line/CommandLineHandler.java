@@ -1,10 +1,10 @@
 package com.options.clearing.corporation.namescoreapplication.command.line;
 
-import com.options.clearing.corporation.namescoreapplication.config.ApplicationConfig;
-import com.options.clearing.corporation.namescoreapplication.handler.FileReaderHandler;
-import com.options.clearing.corporation.namescoreapplication.handler.ScoringHandler;
-import com.options.clearing.corporation.namescoreapplication.util.Constants;
-import com.options.clearing.corporation.namescoreapplication.util.GeneralUtil;
+import com.options.clearing.corporation.namescoreapplication.shared.config.ApplicationConfig;
+import com.options.clearing.corporation.namescoreapplication.shared.handler.FileReaderHandler;
+import com.options.clearing.corporation.namescoreapplication.shared.handler.ScoringHandler;
+import com.options.clearing.corporation.namescoreapplication.shared.util.Constants;
+import com.options.clearing.corporation.namescoreapplication.shared.util.GeneralUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;

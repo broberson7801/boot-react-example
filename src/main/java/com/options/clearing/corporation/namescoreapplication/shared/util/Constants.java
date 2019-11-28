@@ -1,4 +1,4 @@
-package com.options.clearing.corporation.namescoreapplication.util;
+package com.options.clearing.corporation.namescoreapplication.shared.util;
 
 public class Constants {
    public static final String COMMA_SEPARATOR = ",";
