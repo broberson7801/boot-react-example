@@ -1,19 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import ServerStatus from './components/ServerStatus/ServerStatus';
 import './App.css';
-import ServerStatus from './components/Status/ServerStatus';
 
-class App extends Component {
+const App = () => {
 
-    
-  render() {   
 
-    return (
-        <div>
-            <ServerStatus></ServerStatus>
-        </div>
-    )
 
-  }
+  return (
+    <div>
+      <ServerStatus></ServerStatus>
+    </div>
+  )
+
 }
 
 export default App;
