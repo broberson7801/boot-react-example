@@ -12,24 +12,25 @@ const errorHandler = error => {
 }
 
 const ServerStatus = () => {
-    const [serverStatus, setServerStatus] = useState('Fetching Server Status');
-    
+    const [serverStatus, setServerStatus] = useState();
+
+
     useEffect(() => {
-        axios.get('http://localhost:8080/server/up')
-            .then(response => response)
-            .then(responseData => {
-                setServerStatus(responseData.data);
-            })
-            .catch(error => {
-                setServerStatus(errorHandler(error));
-            });
+            axios.get('http://localhost:8080/server/up')
+                .then(response => response)
+                .then(responseData => {
+                    setServerStatus(responseData.data);
+                })
+                .catch(error => {
+                    setServerStatus(errorHandler(error));
+                });
     });
 
     return (
-            <div>
-                <h1>Server Status</h1>
-                <p>{serverStatus}</p>
-            </div>
+        <div>
+            <h1>Server Status</h1>
+            <p>{serverStatus}</p>
+        </div>
     );
 }
 
