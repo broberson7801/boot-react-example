@@ -2,6 +2,7 @@ package com.options.clearing.corporation.namescoreapplication.web;
 
 import com.options.clearing.corporation.namescoreapplication.web.interfaces.ScoreModelInterface;
 import com.options.clearing.corporation.namescoreapplication.web.model.ErrorModel;
+import com.options.clearing.corporation.namescoreapplication.web.model.ScoreRequest;
 import com.options.clearing.corporation.namescoreapplication.web.model.ScoreResponseModel;
 import com.options.clearing.corporation.namescoreapplication.web.service.NameScoreService;
 import org.junit.jupiter.api.DisplayName;
@@ -42,7 +43,7 @@ class NameScoreApplicationControllerTest {
         when(nameScoreService.getScoreFromTextFile(any())).thenReturn(serviceResponse);
 
         ResponseEntity<ScoreModelInterface> response = nameScoreApplicationController
-                .getScoreResponseModel("path/to/file");
+                .getScoreResponseModel(new ScoreRequest());
 
         assertAll("result",
                 () -> assertEquals(HttpStatus.OK, response.getStatusCode()),
@@ -56,7 +57,7 @@ class NameScoreApplicationControllerTest {
         when(nameScoreService.getScoreFromTextFile(any())).thenReturn(serviceResponse);
 
         ResponseEntity<ScoreModelInterface> response = nameScoreApplicationController
-                .getScoreResponseModel("path/to/file");
+                .getScoreResponseModel(new ScoreRequest());
 
         assertAll("result",
                 () -> assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode()),

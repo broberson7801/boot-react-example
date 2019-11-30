@@ -33,6 +33,11 @@ const Cockpit = () => {
         }
     }
 
+    const handleChange = (event) => {
+        setFilePath(event.target.value);
+        setShowNameScore(false);
+    }
+
     return (
         <div>
             <div>
@@ -42,7 +47,7 @@ const Cockpit = () => {
                 {showInputField ?
                     <input type="text"
                         value={filePath}
-                        onChange={filePathHandler}
+                        onChange={handleChange}
                         onKeyPress={filePathHandler} />
                     : null}
                 {showNamescore ?
