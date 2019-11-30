@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import ScoredNames from '../ScoredNames/ScoredNames';
+import ServerException from '../Exceptions/ServerException';
 import axios from 'axios';
 
 const NameScore = (props) => {
-    const [scoredNames, setScoredNames] = useState({ sortedNames: '', scoreMap: '' });
+    const [scoredNames, setScoredNames] = useState({ sortedNames: '', scoreMap: '', listTotalScore: ''});
     const [showScoredNames, setShowScoredNames] = useState();
+    const [error, setError] = useState();
+    const [showError, setShowError] = useState();
 
     /*
         file paths have backslashes, which are treated as escape characters;
@@ -40,36 +43,32 @@ const NameScore = (props) => {
                 setScoredNames(
                     {
                         sortedNames: responseData.sortedNames,
-                        scoreMap: scoreMapHandler(responseData.scoreMap)
+                        scoreMap: scoreMapHandler(responseData.scoreMap),
+                        listTotalScore: responseData.listTotalScore
                     }
                 );
-                return responseData;
-            }).then(res => {
-                /* 
-                    we place the setShowScoredNames() in it's own then() block
-                    to enforce synchronous behavior;
-
-                    the over arching useEffect() will otherwise call the 
-                    setShowScoredNames(true) function, resulting in the 
-                    return statement executing before the axios call 
-                    finishes
-                */
                 setShowScoredNames(true);
             }).catch(error => {
                 console.log(error.response.data);
+                setError(error.response.data);
+                setShowError(true);
             })
     }, [props.filePath]);
 
-    return (
+    const jsxHandler = () => {
+        if(showScoredNames) {
+            return <ScoredNames data={scoredNames} />
+        } else if (showError) {
+            return <ServerException error={error}/>
+        } else {
+            return null;
+        }
+    }
 
+    return (
         <div>
-            <h1>The Scored Names List</h1>
-            {showScoredNames === true ?
-                <div>
-                    <ScoredNames data={scoredNames} />
-                </div> :
-                <h2>Getting the Score List</h2>}
-        </div>
+            {jsxHandler()}
+        </div>        
     )
 }
 

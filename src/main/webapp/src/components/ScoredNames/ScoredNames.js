@@ -3,15 +3,25 @@ import ScoredName from '../ScoredNames/ScoredName/ScoredName'
 
 const ScoredNames = (props) => {
 
-    return props.data.sortedNames.map((object) => {
-        return (
-            <ScoredName 
-            name={object}
-            score={props.data.scoreMap.get(object)}
-            />
-        );
+    const scoredNamesHandler = (props) => {
+        return props.data.sortedNames.map((object, index) => {
+            return (
+                <ScoredName
+                key={index} 
+                name={object}
+                score={props.data.scoreMap.get(object)}
+                />
+            );
+    
+        });
+    }
 
-    });
+    return (
+        <div>
+            <h1>Total Score Of List: {props.data.listTotalScore}</h1>
+        {scoredNamesHandler(props)}
+        </div>
+    )
 
 }
 
