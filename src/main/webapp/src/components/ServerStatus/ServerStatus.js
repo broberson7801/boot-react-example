@@ -1,35 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios';
+import React from 'react'
 
-const errorHandler = error => {
-    let errorMessage = "";
-    if (!error.response) {
-        errorMessage = 'Unable to connect to server';
-    } else {
-        errorMessage = error.response.data;
-    }
-    return errorMessage;
-}
-
-const ServerStatus = () => {
-    const [serverStatus, setServerStatus] = useState();
-
-
-    useEffect(() => {
-            axios.get('http://localhost:8080/server/up')
-                .then(response => response)
-                .then(responseData => {
-                    setServerStatus(responseData.data);
-                })
-                .catch(error => {
-                    setServerStatus(errorHandler(error));
-                });
-    });
-
+const ServerStatus = (props) => {
     return (
         <div>
             <h1>Server Status</h1>
-            <p>{serverStatus}</p>
+            <p>{props.serverStatus}</p>
         </div>
     );
 }

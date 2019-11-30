@@ -1,15 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
-import ServerStatus from './components/ServerStatus/ServerStatus'
-import NameScore from './components/NameScore/NameScore'
+import Cockpit from './components/Cockpit/Cockpit'
 
 const App = () => {
 
   return (
+    //abstract the logic to another component
     <div>
-      <ServerStatus />
-      <br></br>
-      <NameScore fileToScore={"C:/Users/brobe/workspace/name-score-application/src/test/resources/OCC_Three_Names.txt"} />
+      <Cockpit />
     </div>
   )
 
