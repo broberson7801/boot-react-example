@@ -1,5 +1,6 @@
 import React from 'react';
-import ScoredName from '../ScoredNames/ScoredName/ScoredName'
+import ScoredName from '../ScoredNames/ScoredName/ScoredName';
+import '../ScoredNames/ScoredNames.css';
 
 const ScoredNames = (props) => {
 
@@ -17,7 +18,7 @@ const ScoredNames = (props) => {
     }
 
     return (
-        <div>
+        <div className="ScoredNames">
             <h1>Total Score Of List: {props.data.listTotalScore}</h1>
             {scoredNamesHandler(props)}
         </div>

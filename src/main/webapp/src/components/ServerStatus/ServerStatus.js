@@ -1,8 +1,9 @@
 import React from 'react'
+import '../ServerStatus/ServerStatus.css'
 
 const ServerStatus = (props) => {
     return (
-        <div>
+        <div className="ServerStatus">
             <h1>Server Status</h1>
             <p>{props.serverStatus}</p>
         </div>

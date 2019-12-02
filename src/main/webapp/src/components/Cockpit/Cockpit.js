@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ServerStatus from '../ServerStatus/ServerStatus'
 import NameScore from '../NameScore/NameScore';
 import axios from 'axios';
+import '../Cockpit/Cockpit.css';
 
 const Cockpit = () => {
     const [filePath, setFilePath] = useState();
@@ -45,10 +46,14 @@ const Cockpit = () => {
                 {<ServerStatus serverStatus={serverStatus} />}
                 <hr/>
                 {showInputField ?
+                <div className="Cockpit">
+                    <h2>Enter full file path .txt file </h2>
                     <input type="text"
+                        placeholder="e.g. C:\path\to\file.txt"
                         value={filePath}
                         onChange={handleChange}
                         onKeyPress={filePathHandler} />
+                </div>        
                     : null}
                 {showNamescore ?
                     <NameScore

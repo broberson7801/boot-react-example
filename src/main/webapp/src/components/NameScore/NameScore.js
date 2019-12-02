@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ScoredNames from '../ScoredNames/ScoredNames';
+import '../NameScore/NameScore.css';
 import ServerException from '../Exceptions/ServerException';
 import axios from 'axios';
 
