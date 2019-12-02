@@ -4,10 +4,6 @@ import java.util.Arrays;
 
 public class GeneralUtil {
 
-    public static boolean doesFileHaveDotTxtExtension(String filPath) {
-        return filPath.substring(filPath.lastIndexOf(".")).trim().equalsIgnoreCase(".txt");
-    }
-
     public static String getNameFromFileWithoutQuotes(String name) {
         return name.replace("\"", "");
     }

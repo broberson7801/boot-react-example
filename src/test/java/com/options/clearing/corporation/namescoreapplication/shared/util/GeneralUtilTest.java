@@ -9,14 +9,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class GeneralUtilTest {
 
     @Test
-    @DisplayName("should return true if file ends with .txt")
-    void testDoesFileHaveDotTxtExtensionForTrue() {
-        String filePath = "/a/file/path/names.txt";
-
-        assertTrue(GeneralUtil.doesFileHaveDotTxtExtension(filePath));
-    }
-
-    @Test
     @DisplayName("should remove quotes from name")
     void testGetNameFromFileWithoutQuotesForRemovingQuotes() {
         String name = "\"LINDA\"";
