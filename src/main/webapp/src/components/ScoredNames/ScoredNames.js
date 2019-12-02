@@ -7,19 +7,19 @@ const ScoredNames = (props) => {
         return props.data.sortedNames.map((object, index) => {
             return (
                 <ScoredName
-                key={index} 
-                name={object}
-                score={props.data.scoreMap.get(object)}
+                    key={index}
+                    name={object}
+                    score={props.data.scoreMap.get(object)}
                 />
             );
-    
+
         });
     }
 
     return (
         <div>
             <h1>Total Score Of List: {props.data.listTotalScore}</h1>
-        {scoredNamesHandler(props)}
+            {scoredNamesHandler(props)}
         </div>
     )
 

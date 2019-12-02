@@ -4,7 +4,7 @@ import ServerException from '../Exceptions/ServerException';
 import axios from 'axios';
 
 const NameScore = (props) => {
-    const [scoredNames, setScoredNames] = useState({ sortedNames: '', scoreMap: '', listTotalScore: ''});
+    const [scoredNames, setScoredNames] = useState({ sortedNames: '', scoreMap: '', listTotalScore: '' });
     const [showScoredNames, setShowScoredNames] = useState();
     const [error, setError] = useState();
     const [showError, setShowError] = useState();
@@ -27,8 +27,8 @@ const NameScore = (props) => {
 
         let result = Object.entries(scoreMapObject)
             .map(([key, value]) => ({ key, value }));
-        
-            result.map((object) => {
+
+        result.map((object) => {
             map.set(object.key, object.value);
         });
 
@@ -56,10 +56,10 @@ const NameScore = (props) => {
     }, [props.filePath]);
 
     const jsxHandler = () => {
-        if(showScoredNames) {
+        if (showScoredNames) {
             return <ScoredNames data={scoredNames} />
         } else if (showError) {
-            return <ServerException error={error}/>
+            return <ServerException error={error} />
         } else {
             return null;
         }
@@ -68,7 +68,7 @@ const NameScore = (props) => {
     return (
         <div>
             {jsxHandler()}
-        </div>        
+        </div>
     )
 }
 
