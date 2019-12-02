@@ -13,6 +13,8 @@ repositories {
 	mavenCentral()
 }
 
+
+
 /*
 	we only install and download node on the "web" profile;
 	the below check makes the "commandline" build much more lean and quicker to build
@@ -68,10 +70,8 @@ test {
 }
 
 bootRun {
-
 	// we set standard in here as the scanner will throw a "no such element" exception without it
 	standardInput = System.in
-	String activeProfile =  System.properties['spring.profiles.active']
+	String activeProfile =  System.properties['--spring.profiles.active']
 	systemProperty "spring.profiles.active", activeProfile
 }
-
